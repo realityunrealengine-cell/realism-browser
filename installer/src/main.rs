@@ -284,7 +284,7 @@ fn install(silent: bool, desktop_flag: bool, dir: PathBuf, update: bool, relaunc
     };
     // An update of a portable / other copy must not take over the registration of the installed one.
     let installed = reg_get(HKEY_CURRENT_USER, UNINSTALL_KEY, "InstallLocation").map(PathBuf::from);
-    let owns_registration = !update || installed.as_ref().map(|p| same_dir(p, &dir)).unwrap_or(true);
+    let owns_registration = !update || installed.as_ref().map(|p| same_dir(p, &dir)).unwrap_or(false);
     if owns_registration {
         register(&dir, &exe);
         make_shortcut(&start_menu_lnk(), &exe);

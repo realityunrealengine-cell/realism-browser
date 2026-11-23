@@ -302,6 +302,19 @@ mod tests {
         assert!(parse_version("v1.10.0") > parse_version("v1.9.9"));
         assert_eq!(parse_version("abc"), None);
     }
+    /// Network test against the real GitHub release: `cargo test --bin realism -- --ignored live_release`
+    #[test]
+    #[ignore]
+    fn live_release() {
+        let rel = fetch_latest().expect("check").expect("a published release");
+        assert!(rel.sha256.is_some(), "release must carry a SHA-256");
+        let path = download(&rel).expect("download + verification");
+        let data = std::fs::read(&path).unwrap();
+        assert_eq!(data.len() as u64, rel.size);
+        assert_eq!(sha256_hex(&data), rel.sha256.clone());
+        println!("downloaded {} -> {}", rel.tag, path.display());
+    }
+
     #[test]
     fn hash() {
         assert_eq!(sha256_hex(b"abc").unwrap(), "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad");
