@@ -1,0 +1,17 @@
+scenario,browser,run,private_ws_mb,commit_mb,ws_mb,cpu_pct,processes,startup_ms
+wiki5,realism,1,226.9,607.3,535.2,0.663,11,100
+wiki5,realism-saver,1,154.7,423.4,399.2,0.721,7,105
+wiki10,realism,1,327.5,1213.9,666.5,1.364,16,101
+wiki10,realism-saver,1,284.1,433.6,542.8,0.897,7,105
+wiki10idle,realism,1,229.7,839.6,573.6,0.865,16,105
+wiki10idle,realism-saver,1,222.2,376.7,500.4,1.053,7,106
+wiki5,realism,2,215.7,589.5,526.5,0.692,11,107
+wiki5,realism-saver,2,149.9,409.2,390.8,0.789,7,106
+wiki10,realism,2,321.9,1198.6,659.2,1.207,16,103
+wiki10,realism-saver,2,285.8,435.6,542.2,1.110,7,99
+wiki10idle,realism,2,228.1,833.6,565.6,0.962,16,98
+wiki10idle,realism-saver,2,252.8,376.9,528.1,0.943,7,104
+wiki5,realism,3,220.3,595.6,530.9,0.819,11,105
+wiki5,realism-saver,3,160.4,405.4,406.7,0.926,7,106
+wiki10,realism,3,324.4,1194.7,665.0,1.364,16,101
+wiki10,realism-saver,3,283.1,434.9,543.3,0.936,7,106
